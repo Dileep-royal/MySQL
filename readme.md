@@ -36,23 +36,23 @@ In the above syntax, the account_name has two parts one is the username, and ano
 ### GRANT PRIVILEGES TO THE MYSQL NEW USER
 
 * To Grant all privileges 
-```MySQL GRANT ALL PRIVILEGES ON * . * TO peter@localhost; ```
+```MySQL> GRANT ALL PRIVILEGES ON * . * TO peter@localhost; ```
 > ***NOTE:***  
-HERE, *.* denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
+HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
-* To grant specific privileges
-```MySQL GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost; ```
+* To grant specific privileges. 
+```MySQL> GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost; ```
 * To flush all the privileges of a user account for changes occurs immediately
-```MySQL FlUSH PRIVILEGES ```
+```MySQL> FlUSH PRIVILEGES ```
 * To see existing privileges of an user
-```MySQL SHOW GRANTS for username;```
+```MySQL> SHOW GRANTS for username;```
 
 ### REVOKE PRIVILEGES TO THE MYSQL NEW USER
 
 * To Revoke all privileges 
-```MySQL REVOKE ALL PRIVILEGES ON * . * TO peter@localhost; ```
+```MySQL> REVOKE ALL PRIVILEGES ON * . * TO peter@localhost; ```
 > ***NOTE:***  
-HERE, "*.*" denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
+HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
 * To Revoke specific privileges
 ```MySQL REVOKE CREATE, SELECT, INSERT ON * . * TO peter@localhost; ```
