@@ -31,7 +31,7 @@
 
 ***SYNTAX***     
 
-```mysql> CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password';```  
+   ```mysql> CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password';```  
 
 In the above syntax, the account_name has two parts one is the username, and another is the hostname, which is separated by @ symbol. Here, the username is the name of the user, and the hostname is the name of the host from which the user can connect with the database server.
 
@@ -39,57 +39,57 @@ In the above syntax, the account_name has two parts one is the username, and ano
 
 * To Grant all privileges   
 
-```mysql> GRANT ALL PRIVILEGES ON * . * TO peter@localhost; ```   
-
-> ***NOTE:***  
-HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
+   ```mysql> GRANT ALL PRIVILEGES ON * . * TO peter@localhost; ```   
 
 * To grant specific privileges   
 
-```mysql> GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost; ``` 
+   ```mysql> GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost; ``` 
 * To flush all the privileges of a user account for changes occurs immediately  
 
-```mysql> FlUSH PRIVILEGES ```
+   ```mysql> FlUSH PRIVILEGES ```
 * To see existing privileges of an user  
 
-```mysql> SHOW GRANTS for username;```
+   ```mysql> SHOW GRANTS for username;```   
+   
+> ***NOTE:***  
+HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
 ## REVOKE PRIVILEGES TO THE MYSQL NEW USER
 
 * To Revoke all privileges   
 
-```mysql> REVOKE ALL PRIVILEGES ON * . * TO peter@localhost; ```  
-
-> ***NOTE:***  
-HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
+   ```mysql> REVOKE ALL PRIVILEGES ON * . * TO peter@localhost; ```    
 
 * To Revoke specific privileges  
 
-```mysql> REVOKE CREATE, SELECT, INSERT ON * . * TO peter@localhost; ```
+   ```mysql> REVOKE CREATE, SELECT, INSERT ON * . * TO peter@localhost; ```   
+  
+> ***NOTE:***  
+HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
 ## DROP USER
 
 ***SYNTAX***   
 
-```mysql> DROP USER 'account_name';  ```
+   ```mysql> DROP USER 'account_name';  ```
 
 ## SHOW USERS
 
 ***SYNTAX***   
 
-```mysql> SELECT user from mysql.user; ```
+   ```mysql> SELECT user from mysql.user; ```
 
 * To get the selected information like as hostname, password expiration status, and account locking   
 
-```mysql> SELECT user, host, account_locked, password_expired FROM user;```
+   ```mysql> SELECT user, host, account_locked, password_expired FROM user;```
 
 * TO show current user  
 
-```mysql> SELECT current_user()/user(); ```
+   ```mysql> SELECT current_user()/user(); ```
 
 * To see the currently logged user in the database server  
 
-```mysql> SELECT user, host, db, command FROM information_schema.processlist; ```
+   ```mysql> SELECT user, host, db, command FROM information_schema.processlist; ```
 
 ## CHANGE MYSQL USER PASSWORD
 
@@ -102,21 +102,21 @@ The Ways are Explained below:
 
 1. **UPDATE Statement**  
 
-***SYNTAX*** 
+   ***SYNTAX*** 
 
-```mysql> UPDATE user SET authentication_string = PASSWORD('jtp12345') WHERE user = 'peter' AND host = 'localhost';```
+   ```mysql> UPDATE user SET authentication_string = PASSWORD('jtp12345') WHERE user = 'peter' AND host = 'localhost';```
 
 2. **SET PASSWORD Statement**  
 
-***SYNTAX***  
+   ***SYNTAX***  
 
-```mysql> SET PASSWORD FOR 'peter'@'localhost' ='jtp12345';```  
+   ```mysql> SET PASSWORD FOR 'peter'@'localhost' ='jtp12345';```  
 
 3. **ALTER USER Statement**  
 
-***SYNTAX***    
+   ***SYNTAX***    
 
-```mysql> ALTER USER peter@localhost IDENTIFIED BY 'jtp123';```  
+   ```mysql> ALTER USER peter@localhost IDENTIFIED BY 'jtp123';```  
 
 >***NOTE:***  
 It's better to use second and third ways,as the password we are saving is encrypted and can't access it using authentication_string from mysql database.
@@ -128,6 +128,6 @@ It's better to use second and third ways,as the password we are saving is encryp
  
 ***SYNTAX***    
 
-```mysql> CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password' WITH GRANT OPTION; ```
+   ```mysql> CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password' WITH GRANT OPTION; ```
 
 
