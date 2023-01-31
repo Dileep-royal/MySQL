@@ -67,15 +67,36 @@ HERE, `*.*` denotes database.table,this is used in order to give privileges to s
 > ***NOTE:***  
 HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
+## TYPES OF PRIVILEGES
+1. Database privileges
+2. Table privileges
+3. Column privileges  
+4. Stored routine privileges (yet to study)   
+
+1. **DATABASE PRIVILEGES**  
+   ***SYNTAX***  
+   
+   ```mysql> GRANT ALL PRIVILEGES ON database_name . * TO peter@localhost;```  
+   
+2. **TABLE PRIVILEGES**
+   ***SYNTAX***  
+   
+   ```mysql> GRANT ALL PRIVILEGES ON database_name . table_name TO peter@localhost;```  
+   
+3. **COLUMN PRIVILEGES**
+   ***SYNTAX***   
+   
+   ```mysql> GRANT INSERT(column_name),UPDATE(column_name) ON database_name . table_name TO peter@localhost;```  
+   
 ## DROP USER
 
-***SYNTAX***   
+   ***SYNTAX***   
 
    ```mysql> DROP USER 'account_name';  ```
 
 ## SHOW USERS
 
-***SYNTAX***   
+   ***SYNTAX***   
 
    ```mysql> SELECT user from mysql.user; ```
 
@@ -126,7 +147,7 @@ It's better to use second and third ways,as the password we are saving is encryp
 * Grant option is used to give privileges to an user,which allows user to give privileges to it's users,without the need of user's host.
 * we can give this grant option at the creation of user.  
  
-***SYNTAX***    
+   ***SYNTAX***    
 
    ```mysql> CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password' WITH GRANT OPTION; ```
 
