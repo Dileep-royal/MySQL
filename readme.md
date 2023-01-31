@@ -95,9 +95,9 @@ HERE, `*.*` denotes database.table,this is used in order to give privileges to s
 * MySQL allows us to change the user account password in three different ways, which are given below:
 1. UPDATE Statement
 2. SET PASSWORD Statement
-3. ALTER USER Statement
+3. ALTER USER Statement  
 
-1. UPDATE Statement
+5. UPDATE Statement
 **syntax**  
 
 ```MySQL UPDATE user SET authentication_string = PASSWORD('jtp12345') WHERE user = 'peter' AND host = 'localhost';```
@@ -105,7 +105,8 @@ HERE, `*.*` denotes database.table,this is used in order to give privileges to s
 2. SET PASSWORD Statement
 **syntax**   
 
-```MySQL SET PASSWORD FOR 'peter'@'localhost' ='jtp12345';```
+```MySQL SET PASSWORD FOR 'peter'@'localhost' ='jtp12345';```  
+
 3. ALTER USER Statement
 **syntax**  
 
@@ -116,7 +117,8 @@ it's better to use second and third ways,as the password we are saving is encryp
 ### GRANT OPTION
 
 * Grant option is used to give privileges to an user,which allows user to give privileges to it's users,without the need of user's host.
-* we can give this grant option at the creation of user;
+* we can give this grant option at the creation of user;  
+
 **syntax**  
 
 ```mysql CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password' WITH GRANT OPTION; ```
