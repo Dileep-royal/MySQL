@@ -1,8 +1,8 @@
 # MySQL
 ![](https://kinsta.com/wp-content/uploads/2022/03/MySQL-logo-2048x1365.png)
 ## About
-* MySQL is a relational Databse
-
+#### REFERENCES
+[Kinsta](https://kinsta.com/blog/postgresql-vs-mysql/#:~:text=MySQL%20is%20a%20purely%20relational,%2C%20ACID%2Dcompliant%20storage%20engine.)
 ## MySQL VS PostgreSQL
 
 | MySQL                                                                                                	| PostgreSQL                                                                                                                                                	|
@@ -27,5 +27,4 @@
 | Every Connection created is an OS Thread.                                                            	| Every Connection created is an OS Process, means requires lot of memory on systems.                                                                       	|
 | Manages Maximum of 8 Tera Bytes of data,50M rows.                                                    	| Manages maximum of 4 Peta Bytes of data.      |
 
-## REFERENCES
-[Kinsta](https://kinsta.com/blog/postgresql-vs-mysql/#:~:text=MySQL%20is%20a%20purely%20relational,%2C%20ACID%2Dcompliant%20storage%20engine.)
+
