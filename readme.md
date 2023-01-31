@@ -26,10 +26,10 @@
 | Every Connection created is an OS Thread.                                                            	| Every Connection created is an OS Process, means requires lot of memory on systems.                                                                       	|
 | Manages Maximum of 8 Tera Bytes of data,50M rows.                                                    	| Manages maximum of 4 Peta Bytes of data.      |
 
-## User Management
+# USER MANAGEMENT
 ### CREATE USER
 
-**Syntax**   
+***SYNTAX***     
 
 ```MySQL CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password';```  
 
@@ -58,25 +58,26 @@ HERE, `*.*` denotes database.table,this is used in order to give privileges to s
 
 * To Revoke all privileges   
 
-```MySQL> REVOKE ALL PRIVILEGES ON * . * TO peter@localhost; ```
+```MySQL> REVOKE ALL PRIVILEGES ON * . * TO peter@localhost; ```  
+
 > ***NOTE:***  
 HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
 * To Revoke specific privileges  
-* 
+
 ```MySQL REVOKE CREATE, SELECT, INSERT ON * . * TO peter@localhost; ```
 
 ### DROP USER
 
-**syntax**  
+***SYNTAX***   
 
-```MySQL DROP USER 'account_name';  ```
+```mysql> DROP USER 'account_name';  ```
 
 ### SHOW USERS
 
-**syntax**  
+***SYNTAX***   
 
-```MySQL Select user from mysql.user; ```
+```mysql> SELECT user from mysql.user; ```
 
 * To get the selected information like as hostname, password expiration status, and account locking   
 
@@ -84,11 +85,11 @@ HERE, `*.*` denotes database.table,this is used in order to give privileges to s
 
 * TO show current user  
 
-```MySQL Select current_user()/user(); ```
+```mysql> SELECT current_user()/user(); ```
 
 * To see the currently logged user in the database server  
 
-```MySQL SELECT user, host, db, command FROM information_schema.processlist; ```
+```mysql> SELECT user, host, db, command FROM information_schema.processlist; ```
 
 ### CHANGE MYSQL USER PASSWORD
 
@@ -96,30 +97,32 @@ HERE, `*.*` denotes database.table,this is used in order to give privileges to s
 1. UPDATE Statement
 2. SET PASSWORD Statement
 3. ALTER USER Statement  
+The Ways are Explained below:  
 
-5. UPDATE Statement
-**syntax**  
+1. **UPDATE Statement**
+***SYNTAX*** 
 
 ```MySQL UPDATE user SET authentication_string = PASSWORD('jtp12345') WHERE user = 'peter' AND host = 'localhost';```
 
-2. SET PASSWORD Statement
-**syntax**   
+2. **SET PASSWORD Statement**
+***SYNTAX***  
 
 ```MySQL SET PASSWORD FOR 'peter'@'localhost' ='jtp12345';```  
 
-3. ALTER USER Statement
-**syntax**  
+3. **ALTER USER Statement**
+***SYNTAX***    
 
-```MySQL ALTER USER peter@localhost IDENTIFIED BY 'jtp123';```
+```MySQL ALTER USER peter@localhost IDENTIFIED BY 'jtp123';```  
+
 >***NOTE:***  
-it's better to use second and third ways,as the password we are saving is encrypted and can't access it using authentication_string from mysql database.
+It's better to use second and third ways,as the password we are saving is encrypted and can't access it using authentication_string from mysql database.
 
 ### GRANT OPTION
 
 * Grant option is used to give privileges to an user,which allows user to give privileges to it's users,without the need of user's host.
-* we can give this grant option at the creation of user;  
-
-**syntax**  
+* we can give this grant option at the creation of user.  
+ 
+***SYNTAX***    
 
 ```mysql CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password' WITH GRANT OPTION; ```
 
