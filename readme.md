@@ -1,4 +1,5 @@
 # MySQL
+![](https://kinsta.com/wp-content/uploads/2022/03/MySQL-logo-2048x1365.png)
 ## About
 * MySQL is a relational Databse
 
