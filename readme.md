@@ -1,7 +1,7 @@
 # MySQL
 ![](https://kinsta.com/wp-content/uploads/2022/03/MySQL-logo-2048x1365.png)
 ## About
-[Kinsta](https://kinsta.com/blog/postgresql-vs-mysql/#:~:text=MySQL%20is%20a%20purely%20relational,%2C%20ACID%2Dcompliant%20storage%20engine.)
+[**Check Here**](https://kinsta.com/blog/postgresql-vs-mysql/#:~:text=MySQL%20is%20a%20purely%20relational,%2C%20ACID%2Dcompliant%20storage%20engine.)
 ## MySQL VS PostgreSQL
 
 | MySQL                                                                                                	| PostgreSQL                                                                                                                                                	|
