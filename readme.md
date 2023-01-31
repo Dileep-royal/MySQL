@@ -73,6 +73,8 @@ In the above syntax, the account_name has two parts one is the username, and ano
 3. Column privileges  
 4. Stored routine privileges (yet to study)   
 
+The types of privileges are explained below:  
+
 1. **DATABASE PRIVILEGES**  
    
    ***SYNTAX***  
