@@ -29,7 +29,7 @@
 # USER MANAGEMENT
 ## CREATE USER
 
-***SYNTAX***     
+   ***SYNTAX***     
 
    ```mysql> CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password';```  
 
@@ -52,7 +52,7 @@ In the above syntax, the account_name has two parts one is the username, and ano
    ```mysql> SHOW GRANTS for username;```   
    
 > ***NOTE:***  
-HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
+   Here, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
 ## REVOKE PRIVILEGES TO THE MYSQL NEW USER
 
@@ -65,7 +65,7 @@ HERE, `*.*` denotes database.table,this is used in order to give privileges to s
    ```mysql> REVOKE CREATE, SELECT, INSERT ON * . * TO peter@localhost; ```   
   
 > ***NOTE:***  
-HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
+   Here, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
 ## TYPES OF PRIVILEGES
 1. Database privileges
@@ -74,19 +74,22 @@ HERE, `*.*` denotes database.table,this is used in order to give privileges to s
 4. Stored routine privileges (yet to study)   
 
 1. **DATABASE PRIVILEGES**  
+   
    ***SYNTAX***  
    
-   ```mysql> GRANT ALL PRIVILEGES ON database_name . * TO peter@localhost;```  
+   ```mysql> GRANT ALL PRIVILEGES ON database_name.* TO peter@localhost;```  
    
-2. **TABLE PRIVILEGES**
+2. **TABLE PRIVILEGES**  
+
    ***SYNTAX***  
    
-   ```mysql> GRANT ALL PRIVILEGES ON database_name . table_name TO peter@localhost;```  
+   ```mysql> GRANT ALL PRIVILEGES ON database_name.table_name TO peter@localhost;```  
    
-3. **COLUMN PRIVILEGES**
+3. **COLUMN PRIVILEGES**  
+
    ***SYNTAX***   
    
-   ```mysql> GRANT INSERT(column_name),UPDATE(column_name) ON database_name . table_name TO peter@localhost;```  
+   ```mysql> GRANT INSERT(column_name),UPDATE(column_name) ON database_name.table_name TO peter@localhost;```  
    
 ## DROP USER
 
@@ -140,7 +143,7 @@ The Ways are Explained below:
    ```mysql> ALTER USER peter@localhost IDENTIFIED BY 'jtp123';```  
 
 >***NOTE:***  
-It's better to use second and third ways,as the password we are saving is encrypted and can't access it using authentication_string from mysql database.
+   It's better to use second and third ways,as the password we are saving is encrypted and can't access it using authentication_string from mysql database.
 
 ## GRANT OPTION
 
