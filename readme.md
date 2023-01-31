@@ -37,7 +37,8 @@ In the above syntax, the account_name has two parts one is the username, and ano
 
 * To Grant all privileges 
 ```MySQL GRANT ALL PRIVILEGES ON * . * TO peter@localhost; ```
-> HERE, *.* denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
+> ***NOTE:***
+HERE, *.* denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
 * To grant specific privileges
 ```MySQL GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost; ```
@@ -91,7 +92,7 @@ In the above syntax, the account_name has two parts one is the username, and ano
 3.ALTER USER Statement
 **syntax**
 ```MySQL ALTER USER peter@localhost IDENTIFIED BY 'jtp123';```
->NOTE: 
+>***NOTE:***
 it's better to use second and third ways,as the password we are saving is encrypted and can't access it using authentication_string from mysql database.
 
 ### GRANT OPTION
@@ -99,6 +100,6 @@ it's better to use second and third ways,as the password we are saving is encryp
 * Grant option is used to give privileges to an user,which allows user to give privileges to it's users,without the need of user's host.
 * we can give this grant option at the creation of user;
 **syntax**
-```MySQL CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password' WITH GRANT OPTION; ```
+```mysql CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password' WITH GRANT OPTION; ```
 
 
