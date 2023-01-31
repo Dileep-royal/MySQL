@@ -27,53 +27,53 @@
 | Manages Maximum of 8 Tera Bytes of data,50M rows.                                                    	| Manages maximum of 4 Peta Bytes of data.      |
 
 # USER MANAGEMENT
-### CREATE USER
+## CREATE USER
 
 ***SYNTAX***     
 
-```MySQL CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password';```  
+```mysql> CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password';```  
 
 In the above syntax, the account_name has two parts one is the username, and another is the hostname, which is separated by @ symbol. Here, the username is the name of the user, and the hostname is the name of the host from which the user can connect with the database server.
 
-### GRANT PRIVILEGES TO THE MYSQL NEW USER
+## GRANT PRIVILEGES TO THE MYSQL NEW USER
 
 * To Grant all privileges   
 
-```MySQL> GRANT ALL PRIVILEGES ON * . * TO peter@localhost; ```   
+```mysql> GRANT ALL PRIVILEGES ON * . * TO peter@localhost; ```   
 
 > ***NOTE:***  
 HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
 * To grant specific privileges   
 
-```MySQL> GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost; ``` 
+```mysql> GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost; ``` 
 * To flush all the privileges of a user account for changes occurs immediately  
 
-```MySQL> FlUSH PRIVILEGES ```
+```mysql> FlUSH PRIVILEGES ```
 * To see existing privileges of an user  
 
-```MySQL> SHOW GRANTS for username;```
+```mysql> SHOW GRANTS for username;```
 
-### REVOKE PRIVILEGES TO THE MYSQL NEW USER
+## REVOKE PRIVILEGES TO THE MYSQL NEW USER
 
 * To Revoke all privileges   
 
-```MySQL> REVOKE ALL PRIVILEGES ON * . * TO peter@localhost; ```  
+```mysql> REVOKE ALL PRIVILEGES ON * . * TO peter@localhost; ```  
 
 > ***NOTE:***  
 HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
 * To Revoke specific privileges  
 
-```MySQL REVOKE CREATE, SELECT, INSERT ON * . * TO peter@localhost; ```
+```mysql> REVOKE CREATE, SELECT, INSERT ON * . * TO peter@localhost; ```
 
-### DROP USER
+## DROP USER
 
 ***SYNTAX***   
 
 ```mysql> DROP USER 'account_name';  ```
 
-### SHOW USERS
+## SHOW USERS
 
 ***SYNTAX***   
 
@@ -81,7 +81,7 @@ HERE, `*.*` denotes database.table,this is used in order to give privileges to s
 
 * To get the selected information like as hostname, password expiration status, and account locking   
 
-```MySQL SELECT user, host, account_locked, password_expired FROM user;```
+```mysql> SELECT user, host, account_locked, password_expired FROM user;```
 
 * TO show current user  
 
@@ -91,39 +91,43 @@ HERE, `*.*` denotes database.table,this is used in order to give privileges to s
 
 ```mysql> SELECT user, host, db, command FROM information_schema.processlist; ```
 
-### CHANGE MYSQL USER PASSWORD
+## CHANGE MYSQL USER PASSWORD
 
 * MySQL allows us to change the user account password in three different ways, which are given below:
 1. UPDATE Statement
 2. SET PASSWORD Statement
 3. ALTER USER Statement  
+ 
 The Ways are Explained below:  
 
-1. **UPDATE Statement**
+1. **UPDATE Statement**  
+
 ***SYNTAX*** 
 
-```MySQL UPDATE user SET authentication_string = PASSWORD('jtp12345') WHERE user = 'peter' AND host = 'localhost';```
+```mysql> UPDATE user SET authentication_string = PASSWORD('jtp12345') WHERE user = 'peter' AND host = 'localhost';```
 
-2. **SET PASSWORD Statement**
+2. **SET PASSWORD Statement**  
+
 ***SYNTAX***  
 
-```MySQL SET PASSWORD FOR 'peter'@'localhost' ='jtp12345';```  
+```mysql> SET PASSWORD FOR 'peter'@'localhost' ='jtp12345';```  
 
-3. **ALTER USER Statement**
+3. **ALTER USER Statement**  
+
 ***SYNTAX***    
 
-```MySQL ALTER USER peter@localhost IDENTIFIED BY 'jtp123';```  
+```mysql> ALTER USER peter@localhost IDENTIFIED BY 'jtp123';```  
 
 >***NOTE:***  
 It's better to use second and third ways,as the password we are saving is encrypted and can't access it using authentication_string from mysql database.
 
-### GRANT OPTION
+## GRANT OPTION
 
 * Grant option is used to give privileges to an user,which allows user to give privileges to it's users,without the need of user's host.
 * we can give this grant option at the creation of user.  
  
 ***SYNTAX***    
 
-```mysql CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password' WITH GRANT OPTION; ```
+```mysql> CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password' WITH GRANT OPTION; ```
 
 
