@@ -1,5 +1,5 @@
 # MySQL
-![](https://kinsta.com/wp-content/uploads/2022/03/MySQL-logo-2048x1365.png)
+![MySQL](https://kinsta.com/wp-content/uploads/2022/03/MySQL-logo-2048x1365.png)
 ## About
 [**Check Here**](https://kinsta.com/blog/postgresql-vs-mysql/#:~:text=MySQL%20is%20a%20purely%20relational,%2C%20ACID%2Dcompliant%20storage%20engine.)
 ## MySQL VS PostgreSQL
@@ -29,69 +29,86 @@
 ## User Management
 ### CREATE USER
 
-**Syntax**
-```MySQL CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password';```
+**Syntax**   
+
+```MySQL CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password';```  
+
 In the above syntax, the account_name has two parts one is the username, and another is the hostname, which is separated by @ symbol. Here, the username is the name of the user, and the hostname is the name of the host from which the user can connect with the database server.
 
 ### GRANT PRIVILEGES TO THE MYSQL NEW USER
 
-* To Grant all privileges 
-```MySQL> GRANT ALL PRIVILEGES ON * . * TO peter@localhost; ```
+* To Grant all privileges   
+
+```MySQL> GRANT ALL PRIVILEGES ON * . * TO peter@localhost; ```   
+
 > ***NOTE:***  
 HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
-* To grant specific privileges. 
-```MySQL> GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost; ```
-* To flush all the privileges of a user account for changes occurs immediately
+* To grant specific privileges   
+
+```MySQL> GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost; ``` 
+* To flush all the privileges of a user account for changes occurs immediately  
+
 ```MySQL> FlUSH PRIVILEGES ```
-* To see existing privileges of an user
+* To see existing privileges of an user  
+
 ```MySQL> SHOW GRANTS for username;```
 
 ### REVOKE PRIVILEGES TO THE MYSQL NEW USER
 
-* To Revoke all privileges 
+* To Revoke all privileges   
+
 ```MySQL> REVOKE ALL PRIVILEGES ON * . * TO peter@localhost; ```
 > ***NOTE:***  
 HERE, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
-* To Revoke specific privileges
+* To Revoke specific privileges  
+* 
 ```MySQL REVOKE CREATE, SELECT, INSERT ON * . * TO peter@localhost; ```
 
 ### DROP USER
 
-**syntax**
+**syntax**  
+
 ```MySQL DROP USER 'account_name';  ```
 
 ### SHOW USERS
 
 **syntax**  
+
 ```MySQL Select user from mysql.user; ```
 
-* To get the selected information like as hostname, password expiration status, and account locking  
+* To get the selected information like as hostname, password expiration status, and account locking   
+
 ```MySQL SELECT user, host, account_locked, password_expired FROM user;```
 
-* TO show current user
+* TO show current user  
+
 ```MySQL Select current_user()/user(); ```
 
-* To see the currently logged user in the database server
+* To see the currently logged user in the database server  
+
 ```MySQL SELECT user, host, db, command FROM information_schema.processlist; ```
 
 ### CHANGE MYSQL USER PASSWORD
 
 * MySQL allows us to change the user account password in three different ways, which are given below:
-1.UPDATE Statement
-2.SET PASSWORD Statement
-3.ALTER USER Statement
+1. UPDATE Statement
+2. SET PASSWORD Statement
+3. ALTER USER Statement
 
-1.UPDATE Statement
+1. UPDATE Statement
 **syntax**  
+
 ```MySQL UPDATE user SET authentication_string = PASSWORD('jtp12345') WHERE user = 'peter' AND host = 'localhost';```
 
-2.SET PASSWORD Statement
-**syntax**  
+2. SET PASSWORD Statement
+**syntax**   
+
 ```MySQL SET PASSWORD FOR 'peter'@'localhost' ='jtp12345';```
-3.ALTER USER Statement
+3. ALTER USER Statement
 **syntax**  
+
 ```MySQL ALTER USER peter@localhost IDENTIFIED BY 'jtp123';```
 >***NOTE:***  
 it's better to use second and third ways,as the password we are saving is encrypted and can't access it using authentication_string from mysql database.
@@ -101,6 +118,7 @@ it's better to use second and third ways,as the password we are saving is encryp
 * Grant option is used to give privileges to an user,which allows user to give privileges to it's users,without the need of user's host.
 * we can give this grant option at the creation of user;
 **syntax**  
+
 ```mysql CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password' WITH GRANT OPTION; ```
 
 
