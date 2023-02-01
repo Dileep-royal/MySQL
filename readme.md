@@ -51,7 +51,7 @@ In the above syntax, the account_name has two parts one is the username, and ano
 
    ```mysql> SHOW GRANTS for username;```   
    
-> ***NOTE:***  
+> ***NOT2222222222222222222222222222222222222222222222E:***  
    Here, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
 ## REVOKE PRIVILEGES TO THE MYSQL NEW USER
@@ -156,4 +156,29 @@ The Ways are Explained below:
 
    ```mysql> CREATE USER [IF NOT EXISTS] account_name IDENTIFIED BY 'password' WITH GRANT OPTION; ```
 
+## ALTER USER
+ 
+*The ALTER USER statement modifies MySQL accounts. It enables authentication, role, SSL/TLS, resource-limit, password-management, comment, and attribute properties to be modified for existing accounts. It can also be used to lock and unlock accounts.  
+
+*In most cases, ALTER USER requires the global CREATE USER privilege, or the UPDATE privilege for the mysql system schema  
+
+[**kNOW MORE ABOUT HERE**](https://dev.mysql.com/doc/refman/8.0/en/alter-user.html)
+
+## PASSWORD MANAGEMENT
+
+* Password expiration, to require passwords to be changed periodically.  
+
+* Password reuse restrictions, to prevent old passwords from being chosen again.  
+
+* Password verification, to require that password changes also specify the current password to be replaced.  
+
+* Dual passwords, to enable clients to connect using either a primary or secondary password.  
+
+* Password strength assessment, to require strong passwords.  
+
+* Random password generation, as an alternative to requiring explicit administrator-specified literal passwords.  
+
+* Password failure tracking, to enable temporary account locking after too many consecutive incorrect-password login failures.  
+
+[**kNOW MORE ABOUT HERE**](https://dev.mysql.com/doc/refman/8.0/en/password-management.html)  
 
