@@ -51,7 +51,7 @@ In the above syntax, the account_name has two parts one is the username, and ano
 
    ```mysql> SHOW GRANTS for username;```   
    
-> ***NOT2222222222222222222222222222222222222222222222E:***  
+> ***NOTE:***  
    Here, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
 
 ## REVOKE PRIVILEGES TO THE MYSQL NEW USER
