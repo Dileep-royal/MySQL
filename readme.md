@@ -104,7 +104,6 @@ The types of privileges are explained below:
    ***SYNTAX***   
    
    ```mysql> GRANT PROXY ON root TO dileep@localhost;```  
-   
 ## REVOKE PRIVILEGES
 * MySQL provides REVOKE statements to remove privileges from a user account.  
 
@@ -141,31 +140,27 @@ The types of privileges are explained below:
 
 ## CHANGE MYSQL USER PASSWORD
 
-* MySQL allows us to change the user account password in three different ways, which are given below:
+*  MySQL allows us to change the user account password in three different ways, which are given below:
 1. UPDATE Statement
 2. SET PASSWORD Statement
 3. ALTER USER Statement  
  
-The Ways are Explained below:  
-
+   The Ways are Explained below:  
 1. **UPDATE Statement**  
 
    ***SYNTAX*** 
 
    ```mysql> UPDATE user SET authentication_string = PASSWORD('jtp12345') WHERE user = 'peter' AND host = 'localhost';```
-
 2. **SET PASSWORD Statement**  
 
    ***SYNTAX***  
 
    ```mysql> SET PASSWORD FOR 'peter'@'localhost' ='jtp12345';```  
-
 3. **ALTER USER Statement**  
 
    ***SYNTAX***    
 
    ```mysql> ALTER USER peter@localhost IDENTIFIED BY 'jtp123';```  
-
 >***NOTE:***  
    It's better to use second and third ways,as the password we are saving is encrypted and can't access it using authentication_string from mysql database.
 
@@ -216,7 +211,7 @@ The Ways are Explained below:
 
    ```mysql> USE [IF EXISTS] database_name ; ```  
 ## SHOW DATABASES
-***SYNTAX***  
+   ***SYNTAX***  
 
    ```mysql> SHOW DATABASES; ```  
 
@@ -228,13 +223,12 @@ The Ways are Explained below:
    ***SYNTAX***
 
    ```mysql> DROP DATABASE|SCHEMA [IF EXISTS] database_name; ```  
-
 ## COPY DATABASE
-1. Use the CREATE DATABASE statement to create a new database.
+1. Use the CREATE DATABASE statement to create a new database.  
+
    ***SYNTAX***  
 
    ```mysql> CREATE DATABASE database_name; ``` 
-
 2. open a DOS or terminal window to access the MySQL server on the command line. Store the data to an SQL file. We can give any name to 
    this file, but it must end with a .sql extension. Export all the database objects along with its data to copy using the mysqldump 
    tool.  
@@ -242,11 +236,11 @@ The Ways are Explained below:
    ***SYNTAX***  
 
    ```mysqldump -u root -p database_name > path; ```  
-3. Then,import this file into the new database.
+3. Then,import this file into the new database.  
+
    ***SYNTAX***  
    
    ```mysqldump -u root -p new_database_name < path; ```  
-
 # TABLES
 
 ## CREATE TABLE
