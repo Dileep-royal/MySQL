@@ -66,12 +66,13 @@ In the above syntax, the account_name has two parts one is the username, and ano
   
 > ***NOTE:***  
    Here, `*.*` denotes database.table,this is used in order to give privileges to specific database or to a specific table of an database.
-
-## TYPES OF PRIVILEGES
+## GRANT PRIRVILEGES
+### TYPES OF PRIVILEGES
 1. Database privileges
 2. Table privileges
 3. Column privileges  
-4. Stored routine privileges (yet to study)   
+4. Stored routine privileges   
+5. Proxy  
 
 The types of privileges are explained below:  
 
@@ -79,20 +80,41 @@ The types of privileges are explained below:
    
    ***SYNTAX***  
    
-   ```mysql> GRANT ALL PRIVILEGES ON database_name.* TO peter@localhost;```  
-   
+   ```mysql> GRANT ALL PRIVILEGES ON database_name.* TO dileep@localhost;```  
 2. **TABLE PRIVILEGES**  
 
    ***SYNTAX***  
    
-   ```mysql> GRANT ALL PRIVILEGES ON database_name.table_name TO peter@localhost;```  
-   
+   ```mysql> GRANT ALL PRIVILEGES ON database_name.table_name TO dileep@localhost;```  
 3. **COLUMN PRIVILEGES**  
 
    ***SYNTAX***   
    
-   ```mysql> GRANT INSERT(column_name),UPDATE(column_name) ON database_name.table_name TO peter@localhost;```  
+   ```mysql> GRANT INSERT(column_name),UPDATE(column_name) ON database_name.table_name TO dileep@localhost;```  
+4. **STORED ROUTINES**
+* It applies to stored routines (procedure and functions). It contains CREATE ROUTINE, ALTER ROUTINE, EXECUTE, and GRANT OPTION 
+  privileges. Here, a user can execute the stored procedure in the current database.  
+
+   ***SYNTAX***   
    
+   ```mysql> GRANT EXECUTE ON PROCEDURE|FUNCTION database_name.procedure_name|function_name TO dileep@localhost;```
+5. **PROXY**
+* It enables one user to be a proxy for other users. 
+
+   ***SYNTAX***   
+   
+   ```mysql> GRANT PROXY ON root TO dileep@localhost;```  
+   
+## REVOKE PRIVILEGES
+* MySQL provides REVOKE statements to remove privileges from a user account.  
+
+1. **REMOVE GLOBAL PRIVILIGES AND GRANT OPTION**
+***SYNTAX***  
+
+```mysql> REVOKE ALL,GRANT OPTION ON *.* FROM dileep@localhost; ```  
+2. **REMOVE ALL OTHER PRIVILEGES TYPES**
+* We can remove all other privileges from user by replacing "GRANT" with "REVOKE" and since we are taking back privileges from users.   so, we can replace "TO" with "FROM"
+
 ## DROP USER
 
    ***SYNTAX***   
@@ -181,4 +203,59 @@ The Ways are Explained below:
 * Password failure tracking, to enable temporary account locking after too many consecutive incorrect-password login failures.  
 
 [**kNOW MORE ABOUT HERE**](https://dev.mysql.com/doc/refman/8.0/en/password-management.html)  
+
+# DATABASE
+
+## CREATE DATABASE  
+   ***SYNTAX***  
+
+   ```mysql> CREATE DATABASE [IF NOT EXISTS] database_name [CHARACTER SET charset_name] [COLLATE collation_name]; ```  
+
+## SELECT DATABASE  
+   ***SYNTAX***  
+
+   ```mysql> USE [IF EXISTS] database_name ; ```  
+## SHOW DATABASES
+***SYNTAX***  
+
+   ```mysql> SHOW DATABASES; ```  
+
+* Show Databases Using Pattern Matching  
+ 
+   ```mysql> SHOW DATABASES LIKE pattern; ```  
+
+## DROP DATABASES  
+   ***SYNTAX***
+
+   ```mysql> DROP DATABASE|SCHEMA [IF EXISTS] database_name; ```  
+
+## COPY DATABASE
+1. Use the CREATE DATABASE statement to create a new database.
+   ***SYNTAX***  
+
+   ```mysql> CREATE DATABASE database_name; ``` 
+
+2. open a DOS or terminal window to access the MySQL server on the command line. Store the data to an SQL file. We can give any name to 
+   this file, but it must end with a .sql extension. Export all the database objects along with its data to copy using the mysqldump 
+   tool.  
+
+   ***SYNTAX***  
+
+   ```mysqldump -u root -p database_name > path; ```  
+3. Then,import this file into the new database.
+   ***SYNTAX***  
+   
+   ```mysqldump -u root -p new_database_name < path; ```  
+
+# TABLES
+
+## CREATE TABLE
+
+
+
+
+
+
+
+
 
