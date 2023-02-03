@@ -111,7 +111,8 @@
 
    ```mysql> REVOKE ALL,GRANT OPTION ON *.* FROM dileep@localhost; ```  
   
-2. **REMOVE ALL OTHER PRIVILEGES TYPES**
+2. **REMOVE ALL OTHER PRIVILEGES TYPES**  
+
    We can remove all other privileges from user by replacing "GRANT" with "REVOKE" and since we are taking back privileges from users.so, we can replace "TO" with "FROM"
 
 ## DROP USER
