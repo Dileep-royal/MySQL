@@ -160,8 +160,8 @@ The Ways are Explained below:
       **SYNTAX**    
 
       ```mysql> ALTER USER peter@localhost IDENTIFIED BY 'jtp123';```  
-      >***NOTE:***  
-      It's better to use second and third ways,as the password we are saving is encrypted and can't access it using authentication_string from mysql database.
+>***NOTE:***  
+It's better to use second and third ways,as the password we are saving is encrypted and can't access it using authentication_string from mysql database.
 
 ## GRANT OPTION
 
