@@ -142,9 +142,9 @@
 ## CHANGE MYSQL USER PASSWORD
 
 *  MySQL allows us to change the user account password in three different ways, which are given below:
-   1. UPDATE Statement
-   2. SET PASSWORD Statement
-   3. ALTER USER Statement  
+1. UPDATE Statement
+2. SET PASSWORD Statement
+3. ALTER USER Statement  
    
 The Ways are Explained below:  
 
