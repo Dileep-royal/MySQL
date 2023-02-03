@@ -106,11 +106,11 @@
       ```mysql> GRANT PROXY ON root TO dileep@localhost;```  
 ## REVOKE PRIVILEGES
 * MySQL provides REVOKE statements to remove privileges from a user account.  
-
 1. **REMOVE GLOBAL PRIVILIGES AND GRANT OPTION**  
 **SYNTAX**  
 
-```mysql> REVOKE ALL,GRANT OPTION ON *.* FROM dileep@localhost; ```  
+   ```mysql> REVOKE ALL,GRANT OPTION ON *.* FROM dileep@localhost; ```  
+  
 2. **REMOVE ALL OTHER PRIVILEGES TYPES**
 * We can remove all other privileges from user by replacing "GRANT" with "REVOKE" and since we are taking back privileges from users. so, we can replace "TO" with "FROM"
 
