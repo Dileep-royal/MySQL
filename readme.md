@@ -106,7 +106,8 @@
       ```mysql> GRANT PROXY ON root TO dileep@localhost;```  
 ## REVOKE PRIVILEGES
    * MySQL provides REVOKE statements to remove privileges from a user account.  
-   1. **REMOVE GLOBAL PRIVILIGES AND GRANT OPTION**
+   1. **REMOVE GLOBAL PRIVILIGES AND GRANT OPTION**  
+   
    **SYNTAX**  
 
    ```mysql> REVOKE ALL,GRANT OPTION ON *.* FROM dileep@localhost; ```  
@@ -139,12 +140,13 @@
 
 ## CHANGE MYSQL USER PASSWORD
 
-   *  MySQL allows us to change the user account password in three different ways, which are given below:
+*  MySQL allows us to change the user account password in three different ways, which are given below:
    1. UPDATE Statement
    2. SET PASSWORD Statement
    3. ALTER USER Statement  
    
-      The Ways are Explained below:  
+The Ways are Explained below:  
+
    1. **UPDATE Statement**  
       **SYNTAX** 
 
@@ -211,7 +213,7 @@
 
    ```mysql> SHOW DATABASES; ```  
 
-   * Show Databases Using Pattern Matching  
+* Show Databases Using Pattern Matching  
    
    ```mysql> SHOW DATABASES LIKE pattern; ```  
 
@@ -220,47 +222,47 @@
 
    ```mysql> DROP DATABASE|SCHEMA [IF EXISTS] database_name; ```  
 ## COPY DATABASE
-   1. Use the CREATE DATABASE statement to create a new database.  
+1. Use the CREATE DATABASE statement to create a new database.  
 
-      **SYNTAX**  
+   **SYNTAX**  
 
-      ```mysql> CREATE DATABASE database_name; ``` 
-   2. open a DOS or terminal window to access the MySQL server on the command line. Store the data to an SQL file. We can give any name to this file, but it must end with a .sql extension. Export all the database objects along with its data to copy using the mysqldump tool.  
+   ```mysql> CREATE DATABASE database_name; ``` 
+2. open a DOS or terminal window to access the MySQL server on the command line. Store the data to an SQL file. We can give any name to this file, but it must end with a .sql extension. Export all the database objects along with its data to copy using the mysqldump tool.  
 
-      **SYNTAX**  
+   **SYNTAX**  
 
-      ```mysqldump -u root -p database_name > path; ```  
-   3. Then,import this file into the new database.  
+   ```mysqldump -u root -p database_name > path; ```  
+3. Then,import this file into the new database.  
 
-      **SYNTAX**  
-   
-      ```mysqldump -u root -p new_database_name < path; ```  
+   **SYNTAX**  
+
+   ```mysqldump -u root -p new_database_name < path; ```  
 # TABLES
 ## CREATE TABLE
    **SYNTAX**  
 
    ```mysql> CREATE TABLE [IF NOT EXISTS] table_name( column_definition1,column_definition2, ........,table_constraints); ``` 
 ## ALTER TABLE
-   1. **ADD COLUMN**
-      **SYNTAX**   
+1. **ADD COLUMN**
+   **SYNTAX**   
 
-      ```mysql> ALTER TABLE [IF EXISTS] table_name ADD new_column_name column_defination FiRST|AFTER column_name; ```  
-   2. **MODIFY COLUMN**
-      **SYNTAX**    
+   ```mysql> ALTER TABLE [IF EXISTS] table_name ADD new_column_name column_defination FiRST|AFTER column_name; ```  
+2. **MODIFY COLUMN**
+   **SYNTAX**    
 
-      ```mysql> ALTER TABLE [IF EXISTS] table_name MODIFY column_name column_defination FIRST|AFTER column_name; ```
-   3. **DROP COLUMN**
-      **SYNTAX**  
+   ```mysql> ALTER TABLE [IF EXISTS] table_name MODIFY column_name column_defination FIRST|AFTER column_name; ```
+3. **DROP COLUMN**
+   **SYNTAX**  
 
-      ```mysql> ALTER TABLE [IF EXISTS] table_name DROP COLUMN column_name; ```
-   4. **RENAME COLUMN**
-      **SYNTAX**  
+   ```mysql> ALTER TABLE [IF EXISTS] table_name DROP COLUMN column_name; ```
+4. **RENAME COLUMN**
+   **SYNTAX**  
 
-      ```mysql> ALTER TABLE [IF EXISTS] table_name RENAME COLUMN old_column_name TO new_column_name column_defination FIRST|AFTER column_name; ```
-   5. **RENAME TABLE**
-      **SYNTAX**  
+   ```mysql> ALTER TABLE [IF EXISTS] table_name RENAME COLUMN old_column_name TO new_column_name column_defination FIRST|AFTER column_name; ```
+5. **RENAME TABLE**
+   **SYNTAX**  
 
-      ```mysql> ALTER TABLE [IF EXISTS] table_name RENAME TO new_table_name; ```  
+   ```mysql> ALTER TABLE [IF EXISTS] table_name RENAME TO new_table_name; ```  
 
 ## SHOW TABLES
    **SYNTAX**  
@@ -268,10 +270,10 @@
    ```mysql> SHOW TABLES; ```
    * Showing tables with pattern matching  
 
-   ```mysql> SHOW TABLES LIKE pattern; ```
+      ```mysql> SHOW TABLES LIKE pattern; ```
    * Showing tables from a particular tables  
 
-   ```mysql> SHOW TABLES FROM|IN database_name; ```
+      ```mysql> SHOW TABLES FROM|IN database_name; ```
 ## RENAME TABLE
    **SYNTAX**  
 
@@ -296,13 +298,13 @@
 ## TRUNCATE TABLE
    * We cannot rollback the deleted data after executing this command because the log is not maintained while performing this operation.
    * We cannot use the truncate statement when a table is referenced by a foreign key or participates in an indexed view.
-      *  In that case, we need to log into the MySQL server and disable foreign key checks before executing the TRUNCATE statement  
+      * In that case, we need to log into the MySQL server and disable foreign key checks before executing the TRUNCATE statement  
 
-      ```mysql> SET FOREIGN_KEY_CHECKS=0; ```  
-         Now,we can truncate the tables  
-      *  After execution, re-enable foreign key checks  
+         ```mysql> SET FOREIGN_KEY_CHECKS=0; ```  
+        Now,we can truncate the tables  
+      * After execution, re-enable foreign key checks  
 
-      ```mysql> SET FOREIGN_KEY_CHECKS=1; ```
+         ```mysql> SET FOREIGN_KEY_CHECKS=1; ```
    * The TRUNCATE command doesn't fire DELETE triggers associated with the table that is being truncated because it does not operate on individual rows.  
 ## DESCRIBE TABLE
    **SYNTAX**  
@@ -325,21 +327,21 @@
    **SYNTAX**  
 
    ```mysql> CREATE TEMPORARY TABLE [IF EXISTS] table_name (column1,column2,....,table_constraints); ```
-   * If the user wants to create a temporary table whose structure is the same as an existing table in the database  
+ * If the user wants to create a temporary table whose structure is the same as an existing table in the database  
 
    ```mysql> CREATE TEMPORARY TABLE temporary_table_name SELECT * FROM original_table_name LIMIT 0; ```
 ## COPY TABLE
-   * copying data along without its dependent objects  
+ * copying data along without its dependent objects  
 
    **SYNTAX**  
 
    ```mysql> CREATE TABLE new_table_name SELECT * FROM existing_table_name;  ```  
-   * copying partial data   
+ * copying partial data   
    
    **SYNTAX**  
 
    ```mysql> CREATE TABLE new_table_name SELECT * FROM existing_table_name WHERE condition;  ```
-   * copying data along with its dependent objects  
+ * copying data along with its dependent objects  
    
    **SYNTAX**  
 
@@ -358,8 +360,8 @@
    ### UNLOCK STATEMENT
    ```mysql> UNLOCK TABLE table_name; ```  
    >***NOTE:***
-   * Read lock is similar to "shared" locks because multiple threads can acquire it at the same time.
-   * Write lock is an "exclusive" locks because another thread cannot read it.  
+     Read lock is similar to "shared" locks because multiple threads can acquire it at the same time.
+     Write lock is an "exclusive" locks because another thread cannot read it.  
 # VIEWS
 
 
