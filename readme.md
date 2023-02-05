@@ -4,7 +4,8 @@
 [**Check Here**](https://kinsta.com/blog/postgresql-vs-mysql/#:~:text=MySQL%20is%20a%20purely%20relational,%2C%20ACID%2Dcompliant%20storage%20engine.)
 ## MySQL VS PostgreSQL
 * MySQL & postgreSQL are the two best and popular databases.
-* Here,below are the differences between them ,which help you to choose best fit for you. 
+* Here,below are the differences between them ,which help you to choose best fit for you.  
+
 | MySQL                                                                                                	| PostgreSQL                                                                                                                                                	|
 |------------------------------------------------------------------------------------------------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------	|
 | Popular Database                                                                                     	| Advanced & Modern Database                                                                                                                                	|
