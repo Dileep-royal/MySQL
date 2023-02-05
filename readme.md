@@ -384,7 +384,8 @@ It's better to use second and third ways,as the password we are saving is encryp
    ### UNLOCK STATEMENT
    ```mysql> UNLOCK TABLE table_name; ```  
    >***NOTE:***
-    * Read lock is similar to "shared" locks because multiple threads can acquire it at the same time.
+    * Read lock is similar to "shared" locks because multiple threads can acquire it at the same time.  
+    
     * Write lock is an "exclusive" locks because another thread cannot read it.</span> 
 
 # VIEWS
