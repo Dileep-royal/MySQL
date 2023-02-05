@@ -94,7 +94,7 @@ The following are the most common constraints used in the MySQL:
       >Eg: ``` CREATE INDEX idx_name ON Shirts(name); ```
    8. ENUM
       * The ENUM data type in MySQL is a string object. It allows us to limit the value chosen from a list of permitted values in the column specification at the time of table creation. 
-      >Eg: ```size ENUM('small', 'medium', 'large', 'x-large')``
+      >Eg: ```size ENUM('small', 'medium', 'large', 'x-large')```
    9. FOREIGN KEY
       * This constraint is used to link two tables together. It is also known as the referencing key. A foreign key column matches the primary key field of another table. It means a foreign key field in one table refers to the primary key field of another table.
       >Eg: ``` Person_ID INT FOREIGN KEY REFERENCES Persons(id) ``` 
