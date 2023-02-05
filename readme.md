@@ -30,12 +30,17 @@
 
 ## SQL COMMANDS
 
-The SQL commands are categorized into the following categories:
-DDL - Data Definition Language
-DML - Data Manipulation Language
-DQL - Data Query Language
-DCL - Data Control Language
-TCL - Transaction Control Language  
+The SQL commands are categorized into the following categories:  
+
+DDL - Data Definition Language  
+
+DML - Data Manipulation Language  
+
+DQL - Data Query Language  
+
+DCL - Data Control Language  
+
+TCL - Transaction Control Language   
 
 1. **DDL**
 * Queries like-CREATE,DROP,TRUNCATE,and ALTER fall into this category because they all manage the structure of DB Objects in some way.  
@@ -62,14 +67,16 @@ Constraints in MySQL is classified into two types:
    These constraints are applied only to the single column that limits the type of particular column data.
 2. **Table Level Constraints:**
    These constraints are applied to the entire table that limits the type of data for the whole table.
-The following are the most common constraints used in the MySQL:
+The following are the most common constraints used in the MySQL:  
+
    1. NOT NULL
       * This constraint specifies that the column cannot have NULL or empty values.
       >Eg: ``` email varchar(30) NOT NULL ```
    2. CHECK
       * It ensures that the inserted value in a column must be satisfied with the given condition.
-      > Syntax: ``` CHECK(expression) ```
-        ``` age int CHECK(age>1=8); ```    
+      > Syntax: ``` CHECK(expression) ```  
+
+        Eg:``` age int CHECK(age>=18); ```    
    3. DEFAULT
       * This constraint is used to set the default value for the particular column where we have not specified any value.
       >Eg: ``` city varchar(30) DEFAULT 'new york' ```
