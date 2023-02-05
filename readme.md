@@ -383,7 +383,8 @@ It's better to use second and third ways,as the password we are saving is encryp
    **WRITE LOCK:** This lock allows a user to do both reading and writing into a table. 
    ### UNLOCK STATEMENT
    ```mysql> UNLOCK TABLE table_name; ```  
-   >***NOTE:***
+   >***NOTE:***  
+   
     1. Read lock is similar to "shared" locks because multiple threads can acquire it at the same time.  
     2. Write lock is an "exclusive" locks because another thread cannot read it.</span> 
 
