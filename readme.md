@@ -3,7 +3,8 @@
 ## About
 [**Check Here**](https://kinsta.com/blog/postgresql-vs-mysql/#:~:text=MySQL%20is%20a%20purely%20relational,%2C%20ACID%2Dcompliant%20storage%20engine.)
 ## MySQL VS PostgreSQL
-
+* MySQL & postgreSQL are the two best and popular databases.
+* Here,below are the differences between them ,which help you to choose best fit for you. 
 | MySQL                                                                                                	| PostgreSQL                                                                                                                                                	|
 |------------------------------------------------------------------------------------------------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------	|
 | Popular Database                                                                                     	| Advanced & Modern Database                                                                                                                                	|
@@ -25,6 +26,70 @@
 | Cloud-ready DBMS                                                                                     	| Not a Cloud-ready DBMS                                                                                                                                    	|
 | Every Connection created is an OS Thread.                                                            	| Every Connection created is an OS Process, means requires lot of memory on systems.                                                                       	|
 | Manages Maximum of 8 Tera Bytes of data,50M rows.                                                    	| Manages maximum of 4 Peta Bytes of data.      |
+
+## SQL COMMANDS
+
+The SQL commands are categorized into the following categories:
+DDL - Data Definition Language
+DML - Data Manipulation Language
+DQL - Data Query Language
+DCL - Data Control Language
+TCL - Transaction Control Language  
+
+1. **DDL**
+* Queries like-CREATE,DROP,TRUNCATE,and ALTER fall into this category because they all manage the structure of DB Objects in some way.  
+>Eg: CREATE command creates the structure of a table, DROP command removes the table structure.
+2. **DML**
+* Queries like DELETE, UPDATE and INSERT fall into this category because they all manipulate the data in some way.
+>Eg: the DELETE command removes data in a table, UPDATE command updates the data.
+3. **DQL**
+* The SELECT query falls into this category because it is used to query the database and get the output of the query.
+>Eg: Using SELECT, we can ask any specific question to a DB and get answers.
+4. **DCL**
+* Queries like GRANT, and REVOKE fall into this category because they're used to control access to the DB.
+>Eg: GRANT will assign permission to a user on a DB Object and REVOKE will remove the permission.  
+5. **TCL**
+* Queries like ROLLBACK, COMMIT & SAVE POINT fall into this category as they're used to manage transactions in the database.
+>Eg: the COMMIT command commits the transaction and the ROLLBACK command rollback all changes done to a DB when a transaction fails.
+
+## CONSTRAINTS
+* The constraint in MySQL is used to specify the rule that allows or restricts what values/data will be stored in the table.
+* Used to ensure data accuracy and integrity inside the table. 
+
+Constraints in MySQL is classified into two types:
+1. **Column Level Constraints:**
+   These constraints are applied only to the single column that limits the type of particular column data.
+2. **Table Level Constraints:**
+   These constraints are applied to the entire table that limits the type of data for the whole table.
+The following are the most common constraints used in the MySQL:
+   1. NOT NULL
+      * This constraint specifies that the column cannot have NULL or empty values.
+      >Eg: ``` email varchar(30) NOT NULL ```
+   2. CHECK
+      * It ensures that the inserted value in a column must be satisfied with the given condition.
+      > Syntax: ``` CHECK(expression) ```
+        ``` age int CHECK(age>1=8); ```    
+   3. DEFAULT
+      * This constraint is used to set the default value for the particular column where we have not specified any value.
+      >Eg: ``` city varchar(30) DEFAULT 'new york' ```
+   4. PRIMARY KEY
+      * This constraint is used to identify each record in a table uniquely. If the column contains primary key constraints, then it cannot be null or empty.
+      >Eg: ``` id INT PRIMARY KEY AUTO_INCREMENT ```
+   5. AUTO_INCREMENT
+      * This constraint automatically generates a unique number whenever we insert a new record into the table. Generally, we use this constraint for the primary key field in a table.
+      >Eg: ``` id INT PRIMARY KEY AUTO_INCREMENT ```
+   6. UNIQUE
+      * This constraint ensures that all values inserted into the column will be unique.
+      >Eg: ``` email varchar(30) UNIQUE ```
+   7. INDEX
+      * This constraint allows us to create and retrieve values from the table very quickly and easily. An index can be created using one or more than one column. It assigns a ROWID for each row in that way they were inserted into the table.
+      >Eg: ``` CREATE INDEX idx_name ON Shirts(name); ```
+   8. ENUM
+      * The ENUM data type in MySQL is a string object. It allows us to limit the value chosen from a list of permitted values in the column specification at the time of table creation. 
+      >Eg: ```size ENUM('small', 'medium', 'large', 'x-large')``
+   9. FOREIGN KEY
+      * This constraint is used to link two tables together. It is also known as the referencing key. A foreign key column matches the primary key field of another table. It means a foreign key field in one table refers to the primary key field of another table.
+      >Eg: ``` Person_ID INT FOREIGN KEY REFERENCES Persons(id) ``` 
 
 # USER MANAGEMENT
 ## CREATE USER
@@ -371,7 +436,17 @@ It's better to use second and third ways,as the password we are saving is encryp
 
    ```mysql> CREATE TABLE [IF NOT EXISTS] new_table_name LIKE existing_table_name;  ```  
 
-   ```mysql> INSERT new_table_name SELECT * FROM existing_table_name; ```  
+   ```mysql> INSERT new_table_name SELECT * FROM existing_table_name; ```   
+
+## UPDATE & DELETE(DML)
+1. **UPDATE**
+**SYNTAX**  
+
+```mysql>UPDATE table_name SET column_name1=value1, colum_name2=value2,... WHERE condition; ```
+2. **DELETE**
+**SYNTAX**  
+
+```mysql> DELETE FROM table_name WHERE condition; ```  
 
 ## TABLE LOCKING
    ### LOCK STATEMENT
@@ -410,3 +485,4 @@ It's better to use second and third ways,as the password we are saving is encryp
 **SYNTAX**  
 
 ```mysql> DROP VIEW view_name; ```
+
