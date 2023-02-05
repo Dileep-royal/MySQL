@@ -198,6 +198,29 @@ It's better to use second and third ways,as the password we are saving is encryp
 
 [**kNOW MORE ABOUT HERE**](https://dev.mysql.com/doc/refman/8.0/en/password-management.html)  
 
+## LOCKING AND UNLOCKING ACCOUNT
+1. **Locking the Account of new user**
+**SYNTAX**  
+
+```mysql> CREATE USER 'dileep'@'localhost' identified by 'password' ACCOUNT LOCK; ```
+2. **Locking the account of existing user**
+**SYNTAX**  
+
+```mysql> ALTER USER 'dileep'@'localhost' identified by 'password' LOCK ACCOUNT; ```  
+3. **To check user account is locked**
+**SYNTAX**  
+
+```mysql> SELECT user,host,account_locked FROM mysql.user; ```  
+4. **To show the number of attempts to connect to the MySQL Server of locked accounts**
+**SYNTAX**  
+
+```mysql>SHOW GLOBAL STATUS LIKE  'locked_connects'; ```
+
+5. **Account Unlocking**
+**SYNTAX**  
+
+```mysql> UNLOCK ACCOUNT 'dileep'@'localhost'; ```  
+
 # DATABASE
 
 ## CREATE DATABASE  
@@ -362,7 +385,28 @@ It's better to use second and third ways,as the password we are saving is encryp
    ```mysql> UNLOCK TABLE table_name; ```  
    >***NOTE:***
      Read lock is similar to "shared" locks because multiple threads can acquire it at the same time.
-     Write lock is an "exclusive" locks because another thread cannot read it.  
+     Write lock is an "exclusive" locks because another thread cannot read it.   
+
 # VIEWS
 
+* The views are definitions built on top of other tables (or views).
+* If any changes occur in the underlying table, the same changes reflected in the View also.  
+* A view does not store the data physically. When we execute the SELECT statement for the view, MySQL uses the query specified in the view's definition and produces the output. Due to this feature, it is sometimes referred to as a virtual table.
 
+**SYNTAX**  
+
+```mysql> CREATE [OR REPLACE] VIEW view_name AS SELECT columns FROM tables [WHERE conditions]; ```
+
+## CREATE VIEW
+**SYNTAX**  
+
+```mysql> CREATE VIEW view_name AS SELECT columns FROM tables [WHERE conditions]; ```
+## UPDATE VIEW
+**SYNTAX**  
+
+```mysql> ALTER VIEW view_name AS SELECT columns FROM tables [WHERE conditions] ``` 
+
+## DROP VIEW
+**SYNTAX**  
+
+```mysql> DROP VIEW view_name; ```
