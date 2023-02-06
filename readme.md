@@ -495,11 +495,10 @@ It's better to use second and third ways,as the password we are saving is encryp
 ```mysql> DROP VIEW view_name; ``` 
 
 ## INSERT IGNORE AND INSERT ON DUPLICATE KEY UPDATE
-
 INSERT IGNORE and INSERT ON DUPLICATE KEY UPDATE statement avoids error in case of following Scenarios :
-1. When we will try to insert a duplicate key where the column of a table has a PRIMARY or UNIQUE KEY constraint.
-2. When we will try to add a NULL value where the column of a table has a NOT NULL constraint.
-3. When we will try to insert a record to a partitioned table where the entered values do not match the format of listed partitions. 
+* When we will try to insert a duplicate key where the column of a table has a PRIMARY or UNIQUE KEY constraint.
+* When we will try to add a NULL value where the column of a table has a NOT NULL constraint.
+* When we will try to insert a record to a partitioned table where the entered values do not match the format of listed partitions. 
 
 They are Explained below:  
 
