@@ -503,7 +503,8 @@ INSERT IGNORE and INSERT ON DUPLICATE KEY UPDATE statement avoids error in case 
 
 
 1. **INSERT ON DUPLICATE KEY UPDATE**
-This Statement update the specified column values,when duplicate key occurs.
+This Statement update the specified column values,when duplicate key occurs.  
+
    **SYNTAX**  
 
    ```mysql> INSERT INTO table (column_names) VALUES (data) ON DUPLICATE KEY UPDATE column1 = expression, column2 = expression…;```
@@ -512,6 +513,7 @@ This Statement update the specified column values,when duplicate key occurs.
 
 2. **INSERT IGNORE**
 This Statement simply allows us to handle errors smoothly in case of above scenarios.  
+ 
    **SYNTAX**  
 
    ```mysql> INSERT IGNORE INTO table_name (column_names) VALUES ( value_list), ( value_list) .....;  ```
