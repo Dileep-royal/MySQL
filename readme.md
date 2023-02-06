@@ -76,7 +76,7 @@ The following are the most common constraints used in the MySQL:
       * It ensures that the inserted value in a column must be satisfied with the given condition.
       > Syntax: ``` CHECK(expression) ```  
 
-        Eg:``` age int CHECK(age>=18); ```    
+        Eg:``` age int CHECK(age>=18) ```    
    3. DEFAULT
       * This constraint is used to set the default value for the particular column where we have not specified any value.
       >Eg: ``` city varchar(30) DEFAULT 'new york' ```
@@ -492,5 +492,32 @@ It's better to use second and third ways,as the password we are saving is encryp
 ## DROP VIEW
 **SYNTAX**  
 
-```mysql> DROP VIEW view_name; ```
+```mysql> DROP VIEW view_name; ``` 
 
+## INSERT IGNORE AND INSERT ON DUPLICATE KEY UPDATE
+
+INSERT IGNORE and INSERT ON DUPLICATE KEY UPDATE statement avoids error in case of following Scenarios :
+   1. When we will try to insert a duplicate key where the column of a table has a PRIMARY or UNIQUE KEY constraint.
+   2. When we will try to add a NULL value where the column of a table has a NOT NULL constraint.
+   3. When we will try to insert a record to a partitioned table where the entered values do not match the format of listed partitions.  
+
+1. **INSERT ON DUPLICATE KEY UPDATE**
+   This Statement update the specified column values,when duplicate key occurs.
+   **SYNTAX**  
+
+   ```mysql> INSERT INTO table (column_names) VALUES (data) ON DUPLICATE KEY UPDATE column1 = expression, column2 = expression…;```
+ >Eg:  
+
+ ```mysql> INSERT INTO Student(Stud_ID, Name, Email, City) VALUES (4, 'John', 'john@gmail.com', 'New York') ON DUPLICATE KEY UPDATE City = 'California'; ```
+
+2. **INSERT IGNORE**
+   This Statement simply allows us to handle errors smoothly in case of above scenarios.  
+   **SYNTAX**  
+
+   ```mysql> INSERT IGNORE INTO table_name (column_names) VALUES ( value_list), ( value_list) .....;  ```
+>Eg:if an stud_ID is PRIMARY KEY and stud_ID "4" is already present in table,then simply it gives warning.  
+
+```mysql> INSERT IGNORE INTO Student(Stud_ID, Name, Email, City) VALUES (4,'Donald', 'donald@gmail.com', 'New York');  ```
+
+## INDEXES
+   
