@@ -499,10 +499,12 @@ It's better to use second and third ways,as the password we are saving is encryp
 INSERT IGNORE and INSERT ON DUPLICATE KEY UPDATE statement avoids error in case of following Scenarios :
 1. When we will try to insert a duplicate key where the column of a table has a PRIMARY or UNIQUE KEY constraint.
 2. When we will try to add a NULL value where the column of a table has a NOT NULL constraint.
-3. When we will try to insert a record to a partitioned table where the entered values do not match the format of listed partitions.  
+3. When we will try to insert a record to a partitioned table where the entered values do not match the format of listed partitions. 
+ 
+They are Explained below:  
 
+1. **INSERT ON DUPLICATE KEY UPDATE**  
 
-1. **INSERT ON DUPLICATE KEY UPDATE**
 This Statement update the specified column values,when duplicate key occurs.  
 
    **SYNTAX**  
@@ -511,9 +513,10 @@ This Statement update the specified column values,when duplicate key occurs.
  >Eg:  
  ```mysql> INSERT INTO Student(Stud_ID, Name, Email, City) VALUES (4, 'John', 'john@gmail.com', 'New York') ON DUPLICATE KEY UPDATE City = 'California'; ```
 
-2. **INSERT IGNORE**
+2. **INSERT IGNORE**  
+
 This Statement simply allows us to handle errors smoothly in case of above scenarios.  
- 
+
    **SYNTAX**  
 
    ```mysql> INSERT IGNORE INTO table_name (column_names) VALUES ( value_list), ( value_list) .....;  ```
