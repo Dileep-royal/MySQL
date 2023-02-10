@@ -276,11 +276,13 @@ It's better to use second and third ways,as the password we are saving is encryp
 **SYNTAX**  
 
 ```mysql> CREATE USER 'dileep'@'localhost' identified by 'password' ACCOUNT LOCK; ```
-2. **Locking the account of existing user**
+2. **Locking the account of existing user**  
+
 **SYNTAX**  
 
 ```mysql> ALTER USER 'dileep'@'localhost' identified by 'password' LOCK ACCOUNT; ```  
-3. **To check user account is locked**
+3. **To check user account is locked**  
+
 **SYNTAX**  
 
 ```mysql> SELECT user,host,account_locked FROM mysql.user; ```  
@@ -340,23 +342,28 @@ It's better to use second and third ways,as the password we are saving is encryp
 
    ```mysql> CREATE TABLE [IF NOT EXISTS] table_name( column_definition1,column_definition2, ........,table_constraints); ``` 
 ## ALTER TABLE
-1. **ADD COLUMN**
+1. **ADD COLUMN**  
+
    **SYNTAX**   
 
    ```mysql> ALTER TABLE [IF EXISTS] table_name ADD new_column_name column_defination FiRST|AFTER column_name; ```  
-2. **MODIFY COLUMN**
+2. **MODIFY COLUMN**  
+
    **SYNTAX**    
 
    ```mysql> ALTER TABLE [IF EXISTS] table_name MODIFY column_name column_defination FIRST|AFTER column_name; ```
-3. **DROP COLUMN**
+3. **DROP COLUMN**  
+
    **SYNTAX**  
 
    ```mysql> ALTER TABLE [IF EXISTS] table_name DROP COLUMN column_name; ```
-4. **RENAME COLUMN**
+4. **RENAME COLUMN**  
+
    **SYNTAX**  
 
    ```mysql> ALTER TABLE [IF EXISTS] table_name RENAME COLUMN old_column_name TO new_column_name column_defination FIRST|AFTER column_name; ```
-5. **RENAME TABLE**
+5. **RENAME TABLE**  
+
    **SYNTAX**  
 
    ```mysql> ALTER TABLE [IF EXISTS] table_name RENAME TO new_table_name; ```  
@@ -556,16 +563,56 @@ To know - [Click Here](https://www.javatpoint.com/mysql-clustered-vs-non-cluster
 
 ## MYSQL CLAUSES
 ### WHERE
+* MySQL WHERE Clause is used with SELECT, INSERT, UPDATE and DELETE clause to filter the results. 
+* It specifies a specific position where you have to do the operation.
+**SYNTAX**  
 
+```WHERE conditions; ```
 ### DISTINCT 
+* MySQL DISTINCT clause is used to remove duplicate records from the table and fetch only the unique records. 
+* The DISTINCT clause is only used with the SELECT statement. 
+**SYNTAX**  
 
+``` SELECT DISTINCT expressions FROM tables [WHERE conditions]; ```
 ### FROM 
+* The MySQL FROM Clause is used to select some records from a table. 
+* It can also be used to retrieve records from multiple tables using JOIN condition.
+**SYNTAX**  
+
+```  FROM table1 [ { INNER JOIN | LEFT [OUTER] JOIN| RIGHT [OUTER] JOIN } table2 ON table1.column1 = table2.column1 ] ```
 
 ### ORDER BY 
+* The MYSQL ORDER BY Clause is used to sort the records in ascending or descending order.
+**SYNTAX**  
 
+```SELECT expressions FROM tables [WHERE conditions] ORDER BY expression [ ASC | DESC ];  ```
 ### GROUP BY 
+* The MYSQL GROUP BY Clause is used to collect data from multiple records and group the result by one or more column. 
+* It is generally used in a SELECT statement.
+* It is also used with some aggregate functions like COUNT, SUM, MIN, MAX, AVG etc. on the grouped column.
+**SYNTAX**  
 
+``` SELECT expression1, expression2, ... expression_n,aggregate_function (expression) AS some_name FROM tables [WHERE conditions] GROUP BY expression1, expression2, ... expression_n;  ```
 ### HAVING 
+* MySQL HAVING Clause is used with GROUP BY clause. It always returns the rows where condition is TRUE.
+**SYNTAX**   
+
+``` SELECT expression1, expression2, ... expression_n,aggregate_function (expression) AS some_name FROM tables [WHERE conditions] GROUP BY expression1, expression2, ... expression_n HAVING condition;  ```
+
+## MYSQL KEYS
+### UNIQUE KEY
+### PRIMARY KEY
+### FOREIGN KEY
+### COMPOSITE KEY
+
+## 
+
+
+
+
+
+
+
 
 
 
