@@ -509,7 +509,7 @@ They are Explained below:
       **SYNTAX**  
 
       ```mysql> INSERT INTO table (column_names) VALUES (data) ON DUPLICATE KEY UPDATE column1 = expression, column2 = expression…;```
-   >Eg:  
+   >Eg:  It updates city column with 'california' ,because of the Stud_ID 4 alredy exists in table(duplicate key)
    ```mysql> INSERT INTO Student(Stud_ID, Name, Email, City) VALUES (4, 'John', 'john@gmail.com', 'New York') ON DUPLICATE KEY UPDATE City = 'California'; ```
 
 2. **INSERT IGNORE**  
@@ -519,8 +519,55 @@ They are Explained below:
       **SYNTAX**  
 
       ```mysql> INSERT IGNORE INTO table_name (column_names) VALUES ( value_list), ( value_list) .....;  ```
-   >Eg: If an stud_ID is PRIMARY KEY and stud_ID "4" is already present in table,then simply it gives warning.  
+   >Eg: If an Stud_ID is PRIMARY KEY and stud_ID "4" is already present in table,then simply it gives warning 
    ```mysql> INSERT IGNORE INTO Student(Stud_ID, Name, Email, City) VALUES (4,'Donald', 'donald@gmail.com', 'New York');  ```
 
 ## INDEXES
-   
+* An index is a data structure that allows us to add indexes in the existing table. 
+* It enables you to improve the faster retrieval of records on a database table. 
+* It creates an entry for each value of the indexed columns. 
+* We use it to quickly find the record without searching each row in a database table whenever the table is accessed. 
+* When a table is created with a primary key or unique key, it automatically creates a special index named PRIMARY. 
+* We called this index as a clustered index. 
+* All indexes other than PRIMARY indexes are known as a non-clustered index or secondary index.
+### CREATE INDEX
+**SYNTAX**
+
+``` CREATE INDEX [index_name] ON [table_name] (column names); ```  
+### SHOW INDEX
+**SYNTAX**  
+
+``` SHOW INDEXES FROM table_name; ```  
+### DROP INDEX
+**SYNTAX**   
+
+``` DROP INDEX index_name ON table_name [algorithm_option][lock_option]; ```
+### DROP PRIMARY KEY INDEX OF TABLE
+**SYNTAX**  
+
+``` DROP INDEX PRIMARY ON table_name ; ```
+
+### CREATE UNIQUE KEY INDEX
+**SYNTAX**   
+
+```mysql> CREATE UNIQUE INDEX index_name ON table_name(column_names); ```
+### CLUSTERED VS NON-CLUSTERED INDEX
+To know - [Click Here](https://www.javatpoint.com/mysql-clustered-vs-non-clustered-index)
+
+## MYSQL CLAUSES
+### WHERE
+
+### DISTINCT 
+
+### FROM 
+
+### ORDER BY 
+
+### GROUP BY 
+
+### HAVING 
+
+
+
+
+
