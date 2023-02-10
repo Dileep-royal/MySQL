@@ -273,28 +273,26 @@ It's better to use second and third ways,as the password we are saving is encryp
 
 ## LOCKING AND UNLOCKING ACCOUNT
 1. **Locking the Account of new user**
-**SYNTAX**  
+   **SYNTAX**  
 
-```mysql> CREATE USER 'dileep'@'localhost' identified by 'password' ACCOUNT LOCK; ```
+   ```mysql> CREATE USER 'dileep'@'localhost' identified by 'password' ACCOUNT LOCK; ```
 2. **Locking the account of existing user**  
+   **SYNTAX**  
 
-**SYNTAX**  
-
-```mysql> ALTER USER 'dileep'@'localhost' identified by 'password' LOCK ACCOUNT; ```  
+   ```mysql> ALTER USER 'dileep'@'localhost' identified by 'password' LOCK ACCOUNT; ```  
 3. **To check user account is locked**  
+   **SYNTAX**  
 
-**SYNTAX**  
-
-```mysql> SELECT user,host,account_locked FROM mysql.user; ```  
+   ```mysql> SELECT user,host,account_locked FROM mysql.user; ```  
 4. **To show the number of attempts to connect to the MySQL Server of locked accounts**
-**SYNTAX**  
+   **SYNTAX**   
 
-```mysql>SHOW GLOBAL STATUS LIKE  'locked_connects'; ```
+   ```mysql>SHOW GLOBAL STATUS LIKE  'locked_connects'; ```
 
 5. **Account Unlocking**
-**SYNTAX**  
+   **SYNTAX**  
 
-```mysql> UNLOCK ACCOUNT 'dileep'@'localhost'; ```  
+   ```mysql> UNLOCK ACCOUNT 'dileep'@'localhost'; ```  
 
 # DATABASE
 
