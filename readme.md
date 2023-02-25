@@ -1,5 +1,8 @@
 # MySQL
-![MySQL](https://kinsta.com/wp-content/uploads/2022/03/MySQL-logo-2048x1365.png)
+![MySQL](https://kinsta.com/wp-content/uploads/2022/03/MySQL-logo-2048x1365.png)   
+
+![30 Days of SQl](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210205194115/30-Days-of-SQL-%E2%80%93-From-Basic-to-Advanced-Level.png) 
+
 ## About
 [**Check Here**](https://kinsta.com/blog/postgresql-vs-mysql/#:~:text=MySQL%20is%20a%20purely%20relational,%2C%20ACID%2Dcompliant%20storage%20engine.)
 ## MySQL VS PostgreSQL
